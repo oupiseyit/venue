@@ -2,10 +2,6 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
-// Route::redirect('/', function () {
-//     return view('home');
-// });
-
 Route::get('/home', function () {
     
     if (session('status')) {
