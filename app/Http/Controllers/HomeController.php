@@ -27,23 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $featuredVenues = [
-            [
-                'hero_image' => "images/hero_bg_1.jpg",
-                'name' => "853 S Lucerne Blvd",
-                'address' => "Los Angeles, CA 90005",
-                'price' => "$20,250,500<",
-                'link' => "#",
-            ],
-            [
-                'hero_image' => "images/hero_bg_3.jpg",
-                'name' => "625 S. Berendo St",
-                'address' => "607 Los Angeles, CA 90005",
-                'price' => "$10,250,500<",
-                'link' => "#",
-            ]
-        ];
-
+        $featuredVenues = Venue::where('is_featured',1)->get();
         $event_types = EventType::all();
         $locations = Location::all();
 
